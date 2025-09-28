@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {                            // Cấu hình các tùy chọn cho trình biên dịch TypeScript
+    "lib": ["dom", "dom.iterable", "esnext"],     // Chỉ định các thư viện môi trường cần dùng (trình duyệt + ESNext)
+    "allowJs": true,                              // Cho phép biên dịch cả file .js bên cạnh .ts
+    "skipLibCheck": true,                         // Bỏ qua kiểm tra kiểu trong các file thư viện (.d.ts)
+    "strict": true,                               // Bật tất cả các kiểm tra nghiêm ngặt của TypeScript
+    "noEmit": true,                               // Không tạo file output (.js) khi biên dịch
+    "esModuleInterop": true,                      // Cho phép import module CommonJS theo kiểu ES module
+    "module": "esnext",                           // Chỉ định loại module là ESNext (dùng import/export hiện đại)
+    "moduleResolution": "bundler",                // Cách giải quyết module (dùng cho bundler như Webpack/Vite)
+    "resolveJsonModule": true,                    // Cho phép import file .json như một module
+    "isolatedModules": true,                      // Mỗi file được xử lý như một module độc lập (phục vụ cho trình bundler)
+    "jsx": "preserve",                            // Giữ nguyên JSX (Next.js sẽ xử lý sau)
+    "incremental": true,                          // Bật chế độ biên dịch gia tăng, giúp tăng tốc độ
+    "plugins": [                                  // Danh sách plugin hỗ trợ thêm
+      {
+        "name": "next"                            // Plugin của Next.js giúp hỗ trợ biên dịch tốt hơn
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]                          // Định nghĩa alias `@/` trỏ tới thư mục `src/`, giúp import ngắn gọn
+    }
+  },
+  "include": [                                    // Danh sách file/folder được biên dịch bởi TypeScript
+    "next-env.d.ts",                              // File cấu hình môi trường Next.js
+    "**/*.ts",                                    // Bao gồm tất cả file .ts trong thư mục và con của nó
+    "**/*.tsx",                                   // Bao gồm tất cả file React dùng TypeScript (.tsx)
+    ".next/types/**/*.ts",                        // Bao gồm các file định nghĩa kiểu do Next.js tạo ra
+    "utils/ethers.js"                             // Bao gồm file utils cụ thể là ethers.js (dù là JS, vì có allowJs)
+  ],
+  "exclude": ["node_modules"]                     // Loại trừ thư mục node_modules khỏi quá trình biên dịch
+}

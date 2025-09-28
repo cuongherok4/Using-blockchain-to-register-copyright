@@ -1,0 +1,2 @@
+chạy test npx jest src/modules/user/user.service.spec.ts --verbose --no-cache
+npx jest src/modules/user/user.controller.spec.ts --verbose --no-cache

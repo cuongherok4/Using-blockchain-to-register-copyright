@@ -1,0 +1,268 @@
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  padding: 40px;
+  font-size: 1.25rem;
+  color: #1e3a8a;
+  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+  min-height: calc(100vh - 80px);
+}
+
+.success-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  animation: slideDown 0.5s ease-out;
+}
+
+.success-dialog-content {
+  background-color: #10b981;
+  color: white;
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 32rem;
+  width: 100%;
+}
+
+.success-dialog-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.close-button {
+  color: white;
+}
+
+.close-button:hover {
+  color: #e5e7eb;
+}
+
+.close-button:focus {
+  outline: none;
+}
+
+.close-button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: transparent;
+  background-color: #1e3a8a;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.message {
+  font-size: 1rem;
+  color: #374151;
+}
+
+.error-message {
+  font-size: 1rem;
+  color: #ef4444;
+}
+
+.table-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.filter-grid {
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .filter-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filter-input {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.filter-input:focus {
+  border-color: #3b82f6;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+  padding: 12px;
+  background-color: #1e3a8a;
+  color: white;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table td {
+  padding: 10px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table td.id {
+  color: #1e3a8a;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.approve-button {
+  background-color: #10b981;
+  color: white;
+}
+
+.approve-button:hover {
+  background-color: #059669;
+}
+
+.details-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.details-button:hover {
+  background-color: #2563eb;
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #dc2626;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 32rem;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1e3a8a;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-details strong {
+  color: #374151;
+}
+
+.modal-details h2 {
+  display: inline;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.access-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.access-button:hover {
+  background-color: #2563eb;
+}
+
+.download-button {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.download-button:hover {
+  background-color: #d97706;
+}
+
+.close-modal-button {
+  background-color: #6b7280;
+  color: white;
+}
+
+.close-modal-button:hover {
+  background-color: #4b5563;
+}
