@@ -1,7 +1,11 @@
 # Ứng dụng Blockchain trong Quản lý Quyền Tác Giả  
 
 ## 📌 Giới thiệu  
-Ứng dụng blockchain để quản lý bản quyền cho đồ án, đề tài nghiên cứu khoa học.  
+Ứng dụng blockchain để quản lý bản quyền cho đồ án và đề tài nghiên cứu khoa học.  
+Mục tiêu:  
+- Đăng ký, xác thực và tra cứu bản quyền minh bạch.  
+- Hạn chế đạo văn, trùng lặp đề tài.  
+- Bảo đảm quyền sở hữu trí tuệ nhờ blockchain.  
 
 ---
 
@@ -11,62 +15,51 @@
 - Blockchain: Solidity, Hardhat  
 - Database: MySQL  
 - Authentication: MetaMask, JWT  
+- Testing: Postman  
 
 ---
 
 ## ⚙️ Kiến trúc hệ thống  
-📷 *Sơ đồ kiến trúc hệ thống*  
-![System Architecture](./images/architecture.png)
+Hệ thống gồm 3 thành phần chính:  
+1. **Frontend (NextJS):** giao diện cho sinh viên & admin.  
+2. **Backend (NestJS):** xử lý nghiệp vụ, kết nối blockchain & cơ sở dữ liệu.  
+3. **Smart Contract (Solidity):** ghi nhận dữ liệu bất biến trên Ethereum.  
 
 ---
 
 ## 📂 Các chức năng chính  
 
 ### 👩‍🎓 Sinh viên  
-- Đăng ký bản quyền đồ án/đề tài  
-- Tra cứu đề tài đã đăng ký  
+- Đăng ký bản quyền đồ án/đề tài.  
+- Quản lý hồ sơ cá nhân.  
+- Tra cứu đề tài đã duyệt và đã đăng ký.  
 
 ### 👨‍🏫 Admin  
-- Quản lý tài khoản sinh viên  
-- Duyệt / từ chối đề tài  
-- Thống kê, xuất báo cáo  
-
-📷 *Use Case Diagram*  
-![Use Case](./images/usecase.png)
+- Quản lý tài khoản sinh viên.  
+- Duyệt / từ chối đề tài.  
+- Thống kê, xuất báo cáo.  
 
 ---
 
 ## 📊 Cơ sở dữ liệu  
-📷 *Sơ đồ ERD*  
-![Database ERD](./images/erd.png)
+- Lưu trữ thông tin ngoài chuỗi bằng MySQL.  
+- Blockchain lưu hash + timestamp để đảm bảo tính bất biến.  
 
 ---
 
 ## 🖥️ Giao diện người dùng  
-
-### 🔑 Đăng nhập  
-![Login Page](./images/login.png)  
-
-### 📑 Quản lý đề tài  
-![Project Management](./images/project.png)  
-
-### 📊 Thống kê  
-![Statistics](./images/statistics.png)  
+- Đăng nhập / quên mật khẩu.  
+- Trang chủ.  
+- Quản lý đề tài.  
+- Quản lý tài khoản sinh viên (Admin).  
+- Thống kê báo cáo.  
 
 ---
 
 ## ✅ Cách triển khai  
+
+### Backend
 ```bash
-# Backend
 cd backend
 npm install
 npm run start
-
-# Frontend
-cd frontend
-npm install
-npm run dev
-
-# Deploy smart contract
-cd contracts
-npx hardhat run scripts/deploy.js --network localhost
