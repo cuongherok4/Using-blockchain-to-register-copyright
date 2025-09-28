@@ -63,3 +63,28 @@ Hệ thống gồm 3 thành phần chính:
 cd backend
 npm install
 npm run start
+
+## 🌐 Tạo mạng ảo và kết nối MetaMask – Ganache
+
+### 1. Lý thuyết cơ bản
+- **Ganache**: công cụ giả lập mạng Ethereum trên máy tính, cho phép tạo blockchain ảo để phát triển và kiểm thử smart contract.  
+- **MetaMask**: ví tiền điện tử, dùng để quản lý tài khoản, ký giao dịch và kết nối dApp với blockchain.  
+- **RPC (Remote Procedure Call)**: địa chỉ để ứng dụng (frontend/backend) giao tiếp với mạng blockchain.  
+- **Private Key**: khóa cá nhân để ký giao dịch → cần giữ bí mật tuyệt đối.  
+
+---
+
+### 2. Tạo mạng ảo bằng Ganache
+Có 2 cách:
+
+**A. Ganache GUI (dễ dùng)**
+1. Cài Ganache GUI.  
+2. Chọn **Quickstart (Ethereum)**.  
+3. Ganache sẽ chạy mạng local tại `http://127.0.0.1:7545`, kèm 10 tài khoản test (đều có ETH ảo).  
+4. Lưu lại **RPC URL** và **Chain ID** (thường là `1337` hoặc `5777`).  
+
+**B. Ganache CLI**
+```bash
+npm install -g ganache   # cài đặt nếu chưa có
+ganache -p 7545 -a 10    # khởi chạy trên cổng 7545, 10 account
+
